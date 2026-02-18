@@ -1,0 +1,37 @@
+<article
+  class="movie-card"
+  (click)="onCardClick()"
+>
+  <div class="movie-card__poster-wrapper">
+    <img
+      class="movie-card__poster"
+      [src]="movie.poster"
+      [alt]="movie.title"
+      loading="lazy"
+    />
+    <div class="movie-card__rating">
+      ★ {{ movie.rating }}
+    </div>
+  </div>
+
+  <div class="movie-card__body">
+    <h3 class="movie-card__title">
+      {{ movie.title }}
+    </h3>
+
+    <p class="movie-card__meta">
+      <span>{{ movie.year }}</span>
+      <span>•</span>
+      <span>{{ movie.duration }}</span>
+    </p>
+
+    <p class="movie-card__genre">
+      {{ movie.genre }}
+    </p>
+
+    <button class="movie-card__button">
+      Смотреть
+    </button>
+  </div>
+</article>
+

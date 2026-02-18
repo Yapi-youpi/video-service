@@ -1,0 +1,133 @@
+@use 'sass:math';
+
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+  color: #f9fafb;
+}
+
+.home__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.home__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.home__subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.home__search {
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #f9fafb;
+  font-size: 14px;
+  outline: none;
+}
+
+.home__search::placeholder {
+  color: #6b7280;
+}
+
+.home__search:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.6);
+}
+
+.home__primary-btn {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px -8px rgba(236, 72, 153, 0.7);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.15s ease;
+}
+
+.home__primary-btn:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+.home__primary-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.home__section {
+  margin-top: 16px;
+}
+
+.home__section-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.home__loading {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.home__empty {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.home__suggestion {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+@media (max-width: 640px) {
+  .home {
+    padding-top: 20px;
+  }
+
+  .home__header {
+    align-items: flex-start;
+  }
+
+  .home__actions {
+    width: 100%;
+  }
+
+  .home__search {
+    flex: 1;
+  }
+}
+

@@ -1,0 +1,53 @@
+<section class="home">
+  <header class="home__header">
+    <div>
+      <h1 class="home__title">Онлайн-кинотеатр</h1>
+      <p class="home__subtitle">Смотри популярные фильмы и продолжай с того места, где остановился.</p>
+    </div>
+
+    <div class="home__actions">
+      <input
+        class="home__search"
+        type="search"
+        placeholder="Поиск фильмов..."
+        [(ngModel)]="searchTerm"
+      />
+      <button class="home__primary-btn">Подобрать фильм</button>
+    </div>
+  </header>
+
+  <section class="home__section">
+    <h2 class="home__section-title">Популярное сейчас</h2>
+
+    @if (isLoading) {
+      <p class="home__loading">
+        Загрузка фильмов...
+      </p>
+    } @else {
+      <div class="home__grid">
+        @for (movie of filteredMovies; track movie.id) {
+          <app-movie-card
+            [movie]="movie"
+            (movieSelected)="onMovieSelected($event)"
+          />
+        }
+      </div>
+    }
+
+    @if (!isLoading && !filteredMovies.length && searchTerm) {
+      <p class="home__empty">
+        Ничего не найдено.
+      </p>
+
+      @if (suggestedMovie) {
+        <p class="home__suggestion">
+          Может быть, вы имели в виду: <strong>{{ suggestedMovie.title }}</strong>?
+        </p>
+      } @else {
+        <p class="home__suggestion">
+          Попробуйте изменить запрос.
+        </p>
+      }
+    }
+  </section>
+</section>

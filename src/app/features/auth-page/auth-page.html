@@ -1,0 +1,50 @@
+<section class="auth">
+  <h1 class="auth__title">Вход</h1>
+
+  <form class="auth__form" (ngSubmit)="onSubmit()">
+    <label class="auth__field">
+      <span class="auth__label">Email</span>
+      <input
+        class="auth__input"
+        type="email"
+        placeholder="you@example.com"
+        name="email"
+        [(ngModel)]="email"
+        required
+      />
+    </label>
+
+    <label class="auth__field">
+      <span class="auth__label">Пароль</span>
+      <input
+        class="auth__input"
+        type="password"
+        placeholder="••••••••"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
+    </label>
+
+    <button
+      type="submit"
+      class="auth__submit"
+      [disabled]="!email || !password"
+    >
+      Войти
+    </button>
+  </form>
+
+  @if (errorMessage) {
+    <p class="auth__error">
+      {{ errorMessage }}
+    </p>
+  }
+
+  @if (successMessage) {
+    <p class="auth__success">
+      {{ successMessage }}
+    </p>
+  }
+</section>
+

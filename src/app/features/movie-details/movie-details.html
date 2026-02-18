@@ -1,0 +1,40 @@
+<section class="movie-details">
+  @if (movie) {
+    <div class="movie-details__layout">
+      <div class="movie-details__poster-wrapper">
+        <img
+          class="movie-details__poster"
+          [src]="movie.poster"
+          [alt]="movie.title"
+        />
+      </div>
+
+      <div class="movie-details__info">
+        <h1 class="movie-details__title">
+          {{ movie.title }}
+        </h1>
+
+        <p class="movie-details__meta">
+          <span>{{ movie.year }}</span>
+          <span>•</span>
+          <span>{{ movie.duration }}</span>
+          <span>•</span>
+          <span>{{ movie.genre }}</span>
+        </p>
+
+        <p class="movie-details__rating">
+          Рейтинг: <strong>{{ movie.rating }}</strong> / 10
+        </p>
+
+        <p class="movie-details__description">
+          Здесь может быть детальное описание фильма. Сейчас это мок-данные, но структура страницы
+          уже готова для реального контента.
+        </p>
+      </div>
+    </div>
+  } @else {
+    <p class="movie-details__not-found">
+      Фильм не найден.
+    </p>
+  }
+</section>
