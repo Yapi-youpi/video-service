@@ -1,5 +1,10 @@
 <section class="movie-details">
-  @if (movie(); as m) {
+  @if (isLoading()) {
+    <div class="movie-details__loading" aria-label="Загрузка">
+      <span class="movie-details__spinner"></span>
+      <p class="movie-details__loading-text">Загрузка фильма...</p>
+    </div>
+  } @else if (movie(); as m) {
     <div class="movie-details__layout">
       <div class="movie-details__poster-wrapper">
         <img
