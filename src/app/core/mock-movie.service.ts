@@ -70,7 +70,10 @@ export class MockMovieService {
 
   getMovieById(id: number): Observable<Movie | null> {
     return this.getMovies().pipe(
-      map((movies) => movies.find((movie) => movie.id === id) ?? null),
+      map((movies) => movies.find((movie) => { 
+        console.log(movie)
+        return movie.id === id
+      }) ?? null),
     );
   }
 }

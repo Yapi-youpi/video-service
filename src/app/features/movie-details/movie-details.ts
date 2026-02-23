@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../../shared/models/movie.model';
@@ -16,7 +16,7 @@ export class MovieDetails {
   private readonly route = inject(ActivatedRoute);
   private readonly movieService = inject(MockMovieService);
 
-  movie: Movie | null = null;
+  movie = signal<Movie | null>(null);
 
   constructor() {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -24,7 +24,7 @@ export class MovieDetails {
 
     if (Number.isFinite(id)) {
       this.movieService.getMovieById(id).subscribe((movie) => {
-        this.movie = movie;
+        this.movie.set(movie);
       });
     }
   }
