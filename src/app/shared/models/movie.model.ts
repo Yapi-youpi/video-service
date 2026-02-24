@@ -6,5 +6,10 @@ export interface Movie {
   rating: number;
   poster: string;
   duration: string;
+  /** Краткое или полное описание фильма */
+  description: string;
+  /** Режиссёр */
+  director: string;
+  /** Страна производства */
+  country: string;
 }
-

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { finalize } from 'rxjs';
 import { Movie } from '../../shared/models/movie.model';
 import { MockMovieService } from '../../core/mock-movie.service';
@@ -8,7 +8,7 @@ import { MockMovieService } from '../../core/mock-movie.service';
 @Component({
   selector: 'app-movie-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './movie-details.html',
   styleUrl: './movie-details.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

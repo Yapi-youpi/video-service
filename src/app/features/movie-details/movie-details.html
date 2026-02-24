@@ -1,4 +1,6 @@
 <section class="movie-details">
+  <a routerLink="/" class="movie-details__back">← На главную</a>
+
   @if (isLoading()) {
     <div class="movie-details__loading" aria-label="Загрузка">
       <span class="movie-details__spinner"></span>
@@ -27,13 +29,24 @@
           <span>{{ m.genre }}</span>
         </p>
 
+        @if (m.director) {
+          <p class="movie-details__director">
+            Режиссёр: <strong>{{ m.director }}</strong>
+          </p>
+        }
+
+        @if (m.country) {
+          <p class="movie-details__country">
+            Страна: {{ m.country }}
+          </p>
+        }
+
         <p class="movie-details__rating">
           Рейтинг: <strong>{{ m.rating }}</strong> / 10
         </p>
 
         <p class="movie-details__description">
-          Здесь может быть детальное описание фильма. Сейчас это мок-данные, но структура страницы
-          уже готова для реального контента.
+          {{ m.description }}
         </p>
       </div>
     </div>

@@ -29,6 +29,18 @@
       {{ movie.genre }}
     </p>
 
+    @if (movie.director) {
+      <p class="movie-card__director">
+        {{ movie.director }}
+      </p>
+    }
+
+    @if (movie.description) {
+      <p class="movie-card__description" [title]="movie.description">
+        {{ movie.description | slice:0:80 }}{{ movie.description.length > 80 ? '…' : '' }}
+      </p>
+    }
+
     <button class="movie-card__button">
       Смотреть
     </button>

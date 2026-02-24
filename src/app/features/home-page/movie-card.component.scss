@@ -64,6 +64,23 @@
   color: #d1d5db;
 }
 
+.movie-card__director {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.movie-card__description {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .movie-card__button {
   margin-top: 8px;
   align-self: flex-start;

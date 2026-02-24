@@ -5,6 +5,21 @@
   color: #f9fafb;
 }
 
+.movie-details__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.movie-details__back:hover {
+  color: #f9fafb;
+}
+
 .movie-details__layout {
   display: grid;
   grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
@@ -44,6 +59,13 @@
   gap: 8px;
   font-size: 14px;
   color: #9ca3af;
+}
+
+.movie-details__director,
+.movie-details__country {
+  margin: 0;
+  font-size: 14px;
+  color: #d1d5db;
 }
 
 .movie-details__rating {
